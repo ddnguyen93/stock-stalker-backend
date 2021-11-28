@@ -35,7 +35,6 @@ class Favourites(Resource):
         fav_list = []
         for favourite in user.favourites_list:
             fav_list.append(str(favourite))
-        print(fav_list)
         return {'fav_list': fav_list}
 
     @jwt_required()

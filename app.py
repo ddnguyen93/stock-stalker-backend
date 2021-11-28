@@ -46,9 +46,8 @@ api.add_resource(Alerts, '/alerts')
 api.add_resource(AlertsList, '/alertslist')
 api.add_resource(AlertsCheck, '/alerts_check')
 
-
+run_scheduler()
 if __name__ == '__main__':
-    run_scheduler()
     app.run(port=5000, debug=True)
 
 # use_reloader=False

@@ -35,7 +35,6 @@ class UserModel(db.Document):
 
     def remove_from_fav(self, ticker):
         stock = StockModel.find_by_ticker(ticker).first()
-        print(stock)
         if str(stock.id) in self.favourites_list:
             self.favourites_list.remove(str(stock.id))
             self.save()

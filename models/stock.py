@@ -37,7 +37,6 @@ class StockModel(db.Document):
                 if not (np.isnan(row['Close'])):
                     dataPoint = {"date": index, "price": round(row['Close'],2)}
                     data.append(dataPoint)
-            print(data[-1])
             stock.hist_data = data
             stock.update_time = datetime.datetime.now()
             stock.save()
@@ -45,10 +44,8 @@ class StockModel(db.Document):
         for stock in cls.objects:
             try:           
                 fetchData(stock)
-                print("successful", stock.ticker)
             except:
                 try:
                     fetchData(stock)
                 except:
-                    print('failed')
                     continue
