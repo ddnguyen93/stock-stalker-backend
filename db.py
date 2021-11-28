@@ -10,7 +10,6 @@ import os
 
 dotenv.load_dotenv()
 
-# uri= "mongodb+srv://ddnguyen:Rp1eH3a7@cluster0.izm6m.mongodb.net/Stock-Stalker?retryWrites=true&w=majority"
 uri = os.getenv("DB_URI")
 
 db.connect(host=uri)
