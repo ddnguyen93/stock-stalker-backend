@@ -7,7 +7,7 @@ import dotenv
 import os
 
 from resources.alerts import AlertsCheck, Alerts, AlertsList
-from resources.favourties import Favourites, FavouritesList
+from resources.favourites import Favourites, FavouritesList
 from resources.stock import Stock, UpdateStock
 from resources.user import CheckToken, TokenRefresh, UserRegister, User, UserLogin, UserVerify
 from resources.search import SearchTicker
