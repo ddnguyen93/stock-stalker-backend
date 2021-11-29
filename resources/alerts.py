@@ -29,16 +29,6 @@ _user_parser.add_argument('alert_type', type=str)
 _user_parser.add_argument('MA_period', type=int)
 
 class Alerts(Resource):
-    # @jwt_required()
-    # def get(self):
-    #     current_user = get_jwt_identity()
-    #     user = UserModel.find_by_user_id(current_user['user_id']).first()
-    #     for alert in user.alerts:
-    #         print(alert.check_alert())
-
-    #     return{}
-
-
     @jwt_required()
     def post(self):
         current_user = get_jwt_identity()
@@ -63,7 +53,6 @@ class Alerts(Resource):
 
         i = 0
         for alert in user.alerts:
-            print(alert.json() == data_obj)
             if alert.json() == data_obj:
                 user.alerts.pop(i)
                 break

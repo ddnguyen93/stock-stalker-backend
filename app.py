@@ -46,10 +46,16 @@ api.add_resource(Alerts, '/alerts')
 api.add_resource(AlertsList, '/alertslist')
 api.add_resource(AlertsCheck, '/alerts_check')
 
+<<<<<<< HEAD
 
 run_scheduler()
 #if __name__ == '__main__':
 #    run_scheduler()
 #    app.run(port=5000, debug=True)
+=======
+run_scheduler()
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
+>>>>>>> 9344239be99584b28df4ed600e879d2939c027fc
 
 # use_reloader=False

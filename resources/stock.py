@@ -21,7 +21,7 @@ class Stock(Resource):
         stock_data = StockModel.find_by_ticker(ticker.lower()).first()
         if stock_data:
             return stock_data.json()
-            # return {'message': 'Stock already in database.'}
+
         else: 
             stock = yf.Ticker(ticker)
             data_info = stock.info
