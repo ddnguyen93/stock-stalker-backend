@@ -12,7 +12,9 @@ def send_verify_email(email, jwt):
     from_password = os.getenv("EMAIL_PWD")
     to_email = email
 
-    message = f"Please click the link to verify your account. http://localhost:3000/verify/{jwt}"
+    frontend_uri = os.getenv("FRONTEND_URI")
+
+    message = f"Please click the link to verify your account. {frontend_uri}/verify/{jwt}"
     msg = MIMEText(message, 'html')
     msg['Subject'] = "Account Verification"
     msg['To'] = to_email
